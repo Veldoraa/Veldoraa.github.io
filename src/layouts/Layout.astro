@@ -1,0 +1,28 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Your Name — Personal Portfolio",
+  description = "Personal portfolio and profile website."
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#08090c" />
+    <title>{title}</title>
+  </head>
+  <body class="noise">
+    <div class="fixed inset-0 pointer-events-none grid-bg -z-10"></div>
+    <slot />
+  </body>
+</html>
